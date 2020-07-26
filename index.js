@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 var fs = require('fs');
 const client = new Discord.Client();
 
-const token = 'NzE3MTkzNjAyMDg1ODE0MzMy.XtWwlw.jBl8uaI00d10DTNNdhAGwFTcMSY';
-/*client.channels.get('736741727125110837').send('testing')*/
+const token = '';
+
 var theMsg;
 client.on('ready' , () =>{
     console.log('This bot is online');
@@ -27,11 +27,15 @@ client.on('message' , (msg) =>{
     }else if ( str.includes(':bristow:') ){
         msg.channel.send('C is a very *thin* wrapper around memory!');
     }
-
     if ( msg.content.charAt(0) == '!' ){
         var cmd = msg.content.toString().substring(1,msg.content.toString().length);
         processCommand(cmd);
        // msg.channel.send(cmd);
+    }
+    if ( str.includes('http:') || str.includes('.com') ){
+        console.log('somebody shared a link')
+        retmsg = msg.member.user.tag+' shared link in message "'+msg+'" in the '+getChannelName(msg.channel.id)+' channel'
+        client.channels.get('736741727125110837').send(retmsg)
     }
     
 }); //end client.on
@@ -63,6 +67,37 @@ function processCommand(command){
         }
         
     }
+}
+
+function getChannelName(id){
+    channelName = '';
+
+     switch(id){
+         case '570046290789007399':
+             channelName = 'general';
+             break;
+         case '626482799725248512':
+             channelName = 'jedi-council'
+             break;
+         case '717036152770527252':
+             channelName = 'comp3350';
+             break;
+         case '735297752656773260':
+             channelName = 'comp3430';
+             break;
+         case '735297337022480404':
+             channelName = 'comp3010';
+             break;
+         case '735297594284179466':
+             channelName = 'comp3170';
+             break;
+        case '570082851937189888':
+            channelName = 'music-commands';
+            break
+        default:
+            channelName = 'unknown'
+     }
+     return channelName;
 }
 
 client.login(token);
