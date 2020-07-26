@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 var fs = require('fs');
 const client = new Discord.Client();
 
-const token = 'NzE3MTkzNjAyMDg1ODE0MzMy.XtW4Ow.G4cJ3Z_LWGrQQrhiZ1Re8t_ezXE';
-
+const token = 'NzE3MTkzNjAyMDg1ODE0MzMy.XtWwlw.jBl8uaI00d10DTNNdhAGwFTcMSY';
+/*client.channels.get('736741727125110837').send('testing')*/
 var theMsg;
 client.on('ready' , () =>{
     console.log('This bot is online');
@@ -21,6 +21,7 @@ client.on('message' , (msg) =>{
     if ( str.includes(':gooddesignishard:') ){
         //cue jam young
         msg.channel.send('good design is *HARD*');
+        
     }else if( str.includes(':guderian:') ){
         msg.channel.send('Hello, it\'s me your internet friend, Robert Guderian!');
     }else if ( str.includes(':bristow:') ){
