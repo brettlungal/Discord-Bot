@@ -26,6 +26,8 @@ client.on('message' , (msg) =>{
         msg.channel.send('Hello, it\'s me your internet friend, Robert Guderian!');
     }else if ( str.includes(':bristow:') ){
         msg.channel.send('C is a very *thin* wrapper around memory!');
+    }else if( str.includes(':brett:') ){
+        msg.channel.send('```Damn bro, save some pussy for the rest of us```')
     }
     if ( msg.content.charAt(0) == '!' ){
         var cmd = msg.content.toString().substring(1,msg.content.toString().length);
@@ -35,6 +37,7 @@ client.on('message' , (msg) =>{
     if ( str.includes('http:') || str.includes('.com') ){
         console.log('somebody shared a link')
         retmsg = msg.member.user.tag+' shared link in message "'+msg+'" in the '+getChannelName(msg.channel.id)+' channel'
+        //send msg to the moderation 
         client.channels.get('736741727125110837').send(retmsg)
     }
     
