@@ -4,7 +4,7 @@ var fs = require('fs');
 const client = new Discord.Client();
 
 const token = process.env.DISCORD_TOKEN;
-//small change
+
 var theMsg;
 client.on('ready' , () =>{
     console.log('This bot is online');
