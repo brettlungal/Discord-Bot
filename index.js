@@ -1,3 +1,4 @@
+const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 const Discord = require('discord.js');
 require('dotenv').config();
 var fs = require('fs');
@@ -8,7 +9,24 @@ const token = process.env.DISCORD_TOKEN;
 var theMsg;
 client.on('ready' , () =>{
     console.log('This bot is online');
+    setInterval(sniff,3600000)
+
 })
+
+function sleep(ms) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
+  }   
+
+function sniff(){
+    var date = new Date();
+    var current_hour = date.getHours();
+    if ( current_hour > 8 && current_hour < 22 ){
+        console.log('Sniffed at '+date)
+        client.channels.get('753243369047588936').send("***SNIFF*** <:tulsi:766038705085218926>");
+    }
+}
 
 client.on('message' , (msg) =>{
     theMsg = msg;
@@ -91,8 +109,8 @@ function getChannelName(id){
          case '735297752656773260':
              channelName = 'comp3430';
              break;
-         case '735297337022480404':
-             channelName = 'comp3010';
+         case '753243369047588936':
+             channelName = 'comp3370';
              break;
          case '735297594284179466':
              channelName = 'comp3170';
