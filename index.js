@@ -1,4 +1,4 @@
-const { SSL_OP_EPHEMERAL_RSA } = require('constants');
+
 const Discord = require('discord.js');
 require('dotenv').config();
 var fs = require('fs');
@@ -9,15 +9,9 @@ const token = process.env.DISCORD_TOKEN;
 var theMsg;
 client.on('ready' , () =>{
     console.log('This bot is online');
-    setInterval(sniff,3600000)
+    //setInterval(sniff,3600000)
 
 })
-
-function sleep(ms) {
-    return new Promise((resolve) => {
-      setTimeout(resolve, ms);
-    });
-  }   
 
 function sniff(){
     var date = new Date();
@@ -49,6 +43,8 @@ client.on('message' , (msg) =>{
         msg.channel.send('```Damn bro, save some pussy for the rest of us```')
     }else if ( str.includes(':zapp:') ){
         msg.channel.send('All hail Emperor Zapp')
+    }else if( str.includes('tulsi') ){
+        msg.channel.send('***SNIFF***')
     }
     if ( msg.content.charAt(0) == '!' ){
         var cmd = msg.content.toString().substring(1,msg.content.toString().length);
