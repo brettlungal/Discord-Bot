@@ -1,14 +1,24 @@
 {
-  "name": "discord-bot",
+  "name": "deadweight_bot",
   "version": "1.0.0",
-  "description": "sick stuff",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Brett Lungal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brettlungal/deadweight-monitor-bot.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brettlungal/deadweight-monitor-bot/issues"
+  },
+  "homepage": "https://github.com/brettlungal/deadweight-monitor-bot#readme",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
   }
 }
